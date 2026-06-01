@@ -1,0 +1,57 @@
+<header class="nav" [class.scrolled]="scrolled()">
+  <div class="container">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a routerLink="/" class="logo" (click)="closeMenu()">
+        <div class="logo-icon">
+          <span class="pj">PJ</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Patrick<em>John</em></span>
+          <span class="logo-sub">Writing Services</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links">
+        <a
+          *ngFor="let link of links"
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: link.exact}"
+          class="nav-link"
+        >
+          <span>{{ link.label }}</span>
+        </a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="nav-cta">
+        <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold">Hire Me</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="ham" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mob-overlay" [class.open]="menuOpen()">
+  <nav class="mob-nav">
+    <a
+      *ngFor="let link of links"
+      [routerLink]="link.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: link.exact}"
+      class="mob-link"
+      (click)="closeMenu()"
+    >{{ link.label }}</a>
+    <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold" style="margin-top:1rem;" (click)="closeMenu()">
+      Hire Me Now →
+    </a>
+  </nav>
+</div>

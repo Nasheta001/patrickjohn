@@ -1,0 +1,109 @@
+<!-- PAGE HERO -->
+<section class="page-hero section">
+  <div class="container">
+    <div class="sec-label reveal" style="justify-content:center">Services</div>
+    <h1 class="sec-title reveal" style="text-align:center;font-size:clamp(2.8rem,5vw,4.5rem)">
+      Two Worlds.<br><span class="gold-text">One Expert.</span>
+    </h1>
+    <p class="sec-sub reveal" style="text-align:center;max-width:560px;margin:0 auto 3rem;">
+      Professional iGaming content that ranks and converts — elite academic writing that
+      earns top marks. Both delivered with the same relentless precision and care.
+    </p>
+
+    <!-- Tab switcher -->
+    <div class="tab-switcher reveal">
+      @for (g of groups; track g.id) {
+        <button
+          class="tab-btn"
+          [class.active]="activeTab === g.id"
+          [class]="activeTab === g.id ? 'tab-btn active ' + g.id : 'tab-btn'"
+          (click)="setTab(g.id)"
+        >
+          <span class="tab-icon">{{ g.icon }}</span>
+          <span>{{ g.title }}</span>
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section services-content">
+  <div class="container">
+    <div class="services-header reveal">
+      <h2 class="sec-title">
+        {{ activeGroup.icon }} {{ activeGroup.title }}
+      </h2>
+      <div class="badge-row">
+        @for (b of activeGroup.badges; track b) {
+          <span class="svc-badge" [class]="activeGroup.accentClass + '-badge'">{{ b }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="services-grid">
+      @for (s of activeGroup.services; track s.name; let i = $index) {
+        <div class="svc-card glass-card reveal" [class]="'reveal-d' + ((i % 4) + 1) + ' ' + activeGroup.accentClass + '-card'">
+          <div class="svc-icon" [class]="activeGroup.accentClass + '-icon'">{{ s.icon }}</div>
+          <h4>{{ s.name }}</h4>
+          <p>{{ s.desc }}</p>
+          <a href="https://wa.me/27717225973" target="_blank" class="svc-cta" [class]="activeGroup.accentClass + '-link'">
+            Get Quote →
+          </a>
+        </div>
+      }
+    </div>
+
+    <!-- CTA strip -->
+    <div class="cta-strip glass-card reveal">
+      <div class="cta-strip-text">
+        <h3>Ready to order a {{ activeGroup.title }} package?</h3>
+        <p>I respond within 2 hours. Urgent deadlines welcome.</p>
+      </div>
+      <div class="cta-strip-btns">
+        <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold">💬 Chat on WhatsApp</a>
+        <a routerLink="/contact" class="btn btn-ghost">Send a Brief</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<section class="section why-section">
+  <div class="container">
+    <div class="sec-label reveal" style="justify-content:center">Why Choose Me</div>
+    <h2 class="sec-title reveal" style="text-align:center">Built on <span class="gold-text">Results</span></h2>
+    <div class="why-grid">
+      <div class="why-card glass-card reveal">
+        <div class="why-icon">⚡</div>
+        <h4>8+ Years Experience</h4>
+        <p>Not a generalist — a certified specialist in both iGaming content and academic writing domains.</p>
+      </div>
+      <div class="why-card glass-card reveal reveal-d1">
+        <div class="why-icon">🔍</div>
+        <h4>SEO Expertise</h4>
+        <p>4+ years of hands-on iGaming SEO. GEO-specific competitive intelligence in every brief.</p>
+      </div>
+      <div class="why-card glass-card reveal reveal-d2">
+        <div class="why-icon">🏆</div>
+        <h4>Proven Track Record</h4>
+        <p>500+ projects. Consistent A grades. Page-one rankings. The results speak louder than claims.</p>
+      </div>
+      <div class="why-card glass-card reveal reveal-d3">
+        <div class="why-icon">🔐</div>
+        <h4>100% Confidential</h4>
+        <p>Your identity, your data, your content — completely protected. Never shared. Never stored.</p>
+      </div>
+      <div class="why-card glass-card reveal reveal-d4">
+        <div class="why-icon">⏰</div>
+        <h4>24/7 Availability</h4>
+        <p>Deadlines don't sleep — and neither do I. Urgent projects are my speciality.</p>
+      </div>
+      <div class="why-card glass-card reveal reveal-d5">
+        <div class="why-icon">🌍</div>
+        <h4>Multi-GEO Authority</h4>
+        <p>UK, USA, SA, Nigeria, Canada, Kenya. I know your market, your audience, and what converts.</p>
+      </div>
+    </div>
+  </div>
+</section>

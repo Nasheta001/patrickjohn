@@ -1,0 +1,82 @@
+.page-hero { text-align: center; }
+
+.tab-switcher {
+  display: inline-flex; gap: 0.5rem;
+  background: rgba(13,31,60,0.5); border-radius: 50px;
+  padding: 0.4rem; margin: 0 auto;
+}
+.tab-btn {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: none; border: none; padding: 0.7rem 1.8rem;
+  border-radius: 50px; font-size: 0.88rem; font-weight: 700;
+  letter-spacing: 0.05em; color: rgba(255,255,255,0.5);
+  transition: all var(--t); cursor: none;
+  .tab-icon { font-size: 1.1rem; }
+  &.active {
+    color: #04091a;
+    &.igaming  { background: linear-gradient(135deg, var(--gold), var(--gold-lt)); }
+    &.academic { background: linear-gradient(135deg, var(--em-dim), var(--em)); }
+  }
+}
+
+/* Services content */
+.services-header { margin-bottom: 2rem; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+.svc-badge {
+  font-size: 0.7rem; font-weight: 700; border-radius: 50px;
+  padding: 0.25rem 0.7rem; letter-spacing: 0.06em;
+}
+.igaming-badge  { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.22); color: var(--gold-lt); }
+.academic-badge { background: rgba(46,204,139,0.08); border: 1px solid rgba(46,204,139,0.2);  color: var(--em); }
+
+.services-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  @media (max-width: 1100px) { grid-template-columns: repeat(2,1fr); }
+  @media (max-width: 560px)  { grid-template-columns: 1fr; }
+}
+.svc-card {
+  padding: 1.6rem; display: flex; flex-direction: column; gap: 0.7rem;
+  &.igaming-card  { border-top: 2px solid rgba(201,168,76,0.3); }
+  &.academic-card { border-top: 2px solid rgba(46,204,139,0.3); }
+  h4 { font-family: 'Outfit', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--white); }
+  p  { font-size: 0.8rem; color: var(--mist); line-height: 1.65; flex: 1; }
+}
+.svc-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+  &.igaming-icon  { background: rgba(201,168,76,0.1); }
+  &.academic-icon { background: rgba(46,204,139,0.08); }
+}
+.svc-cta {
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none; transition: letter-spacing var(--t);
+  &.igaming-link  { color: var(--gold); }
+  &.academic-link { color: var(--em); }
+  &:hover { letter-spacing: 0.14em; }
+}
+
+/* CTA Strip */
+.cta-strip {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding: 2rem 2.5rem; flex-wrap: wrap;
+  h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; color: var(--white); }
+  p  { font-size: 0.82rem; color: var(--mist); margin-top: 0.3rem; }
+}
+.cta-strip-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* Why section */
+.why-section { background: rgba(13,31,60,0.2); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem;
+  margin-top: 2.5rem;
+  @media (max-width: 760px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+.why-card { padding: 1.8rem; text-align: center; }
+.why-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.why-card h4 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.06em;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.why-card p { font-size: 0.8rem; color: var(--mist); line-height: 1.65; }

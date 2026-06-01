@@ -1,0 +1,74 @@
+<section class="section page-hero" style="text-align:center">
+  <div class="container">
+    <div class="sec-label reveal" style="justify-content:center">Portfolio</div>
+    <h1 class="sec-title reveal" style="font-size:clamp(2.8rem,5vw,4.5rem)">
+      Selected <span class="gold-text">Work</span>
+    </h1>
+    <p class="sec-sub reveal" style="max-width:520px;margin:0 auto 2.5rem;">
+      A curated selection of iGaming content projects and academic writing samples.
+      Results speak louder than promises.
+    </p>
+
+    <div class="tab-switcher reveal">
+      <button class="tab-btn" [class.active]="activeTab() === 'ig'" (click)="setTab('ig')">
+        🎰 iGaming Content
+      </button>
+      <button class="tab-btn ac" [class.active]="activeTab() === 'ac'" (click)="setTab('ac')">
+        🎓 Academic Writing
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section port-section">
+  <div class="container">
+    <div class="port-grid">
+      @for (p of currentItems; track p.title; let i = $index) {
+        <div class="pcard glass-card reveal" [class]="'reveal-d' + ((i % 3) + 1)">
+          <div class="pcard-top" [style.background]="'linear-gradient(135deg,#0d1f3c,' + p.catColor + '22)'">
+            <span class="pcard-emoji">{{ p.emoji }}</span>
+            <span class="pcard-tag">{{ p.tag }}</span>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-cat" [style.color]="p.catColor">{{ p.cat }} · {{ p.geo }}</div>
+            <h4>{{ p.title }}</h4>
+            <p>{{ p.desc }}</p>
+            <div class="pcard-meta">
+              <span class="meta-chip">{{ p.type }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="port-cta reveal" style="text-align:center;margin-top:3rem;">
+      <p style="color:var(--mist);margin-bottom:1.2rem;">Interested in seeing more? Let's discuss your specific requirements.</p>
+      <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold">Request Samples →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testi-section">
+  <div class="container">
+    <div class="sec-label reveal" style="justify-content:center">Client Feedback</div>
+    <h2 class="sec-title reveal" style="text-align:center">What <span class="gold-text">Clients Say</span></h2>
+    <div class="testi-grid">
+      @for (t of testimonials; track t.name; let i = $index) {
+        <div class="tcard glass-card reveal" [class]="'reveal-d' + (i+1)">
+          <div class="stars">
+            @for (s of stars; track s) { <span>★</span> }
+          </div>
+          <p class="tq">"{{ t.q }}"</p>
+          <div class="tauth">
+            <div class="tav" [style.background]="t.grad">{{ t.init }}</div>
+            <div>
+              <strong>{{ t.name }}</strong>
+              <span>{{ t.role }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

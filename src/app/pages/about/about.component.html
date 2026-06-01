@@ -1,0 +1,129 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-copy reveal">
+        <div class="sec-label">About Me</div>
+        <h1 class="sec-title">The Expert<br>Behind <span class="gold-text">Every Word</span></h1>
+        <p class="sec-sub">
+          I'm PatrickJohn — a seasoned iGaming Content Strategist and Academic
+          Writing Expert with 8+ years of combined experience. My work spans
+          high-converting casino affiliate content to distinction-grade dissertations.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold">Chat on WhatsApp</a>
+          <a routerLink="/portfolio" class="btn btn-ghost">View My Work</a>
+        </div>
+      </div>
+
+      <div class="about-visual reveal reveal-d2">
+        <div class="about-img-frame">
+          <div class="img-overlay"></div>
+          <div class="about-name-tag">
+            <strong>PatrickJohn</strong>
+            <span>iGaming & Academic Expert</span>
+          </div>
+        </div>
+        <div class="exp-badge">
+          <span class="big gold-text">8+</span>
+          <span>Years of Writing Excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="section cred-section">
+  <div class="container">
+    <div class="sec-label reveal">Experience & Background</div>
+    <h2 class="sec-title reveal">Built on <span class="gold-text">Real Experience</span></h2>
+    <div class="cred-grid">
+      @for (c of credentials; track c.title; let i = $index) {
+        <div class="cred-card glass-card reveal" [class]="'reveal-d' + (i+1)">
+          <div class="cred-icon" [style.background]="c.color">{{ c.icon }}</div>
+          <div class="cred-body">
+            <h4>{{ c.title }}</h4>
+            <p>{{ c.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills-section">
+  <div class="container">
+    <div class="skills-grid">
+      <div class="skills-copy reveal">
+        <div class="sec-label">Core Skills</div>
+        <h2 class="sec-title">Where I <span class="gold-text">Excel</span></h2>
+        <p class="sec-sub">
+          Years of hands-on work across two demanding disciplines have sharpened
+          a unique cross-skill set that few writers can offer. Strategic thinking
+          meets disciplined execution in every piece.
+        </p>
+        <a routerLink="/services" class="btn btn-gold">See Full Services</a>
+      </div>
+      <div class="skills-bars reveal reveal-d2">
+        @for (s of expertise; track s.area; let i = $index) {
+          <div class="skill-row">
+            <div class="skill-label">
+              <span>{{ s.area }}</span>
+              <span class="skill-pct gold-text">{{ s.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" [style.width]="s.level + '%'"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSITIES & GEOS -->
+<section class="section platforms-section">
+  <div class="container">
+    <div class="platforms-grid">
+      <div class="platform-block reveal">
+        <div class="sec-label">Academic Platforms</div>
+        <h3 class="sec-title" style="font-size:2rem;">Universities I <span class="gold-text">Support</span></h3>
+        <div class="tag-cloud">
+          @for (u of universities; track u) {
+            <span class="uni-tag">{{ u }}</span>
+          }
+        </div>
+      </div>
+      <div class="platform-block reveal reveal-d2">
+        <div class="sec-label">iGaming GEOs</div>
+        <h3 class="sec-title" style="font-size:2rem;">Markets I <span class="em-text">Cover</span></h3>
+        <div class="tag-cloud">
+          @for (g of geos; track g) {
+            <span class="geo-tag">{{ g }}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-box glass-card reveal">
+      <div class="cta-inner">
+        <h2 class="sec-title" style="margin-bottom:0.5rem;">Ready to <span class="gold-text">Get Started?</span></h2>
+        <p style="color:var(--mist);max-width:480px;text-align:center;">
+          Whether you need iGaming content that dominates search or academic writing
+          that secures top grades — let's talk.
+        </p>
+        <div class="cta-btns">
+          <a href="https://wa.me/27717225973" target="_blank" class="btn btn-gold">💬 WhatsApp Now</a>
+          <a routerLink="/contact" class="btn btn-ghost">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
